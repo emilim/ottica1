@@ -1,0 +1,256 @@
+
+
+*******************************************************************************
+Wed Nov 13 20:10:32 2024
+
+
+FIT:    data read from "< paste lente.txt immagine.txt" using 1:2
+        format = x:z
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.7350250000e+02   0.00e+00  5.37e+01    1.000000e+00   1.000000e+00
+   5 1.6370372925e+01  -3.33e-03  5.37e-04    9.740130e-01   8.330720e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 16.3704
+rel. change during last iteration : -3.3291e-08
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.793492
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.62963
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.974013         +/- 0.005515     (0.5663%)
+b               = 8.33072          +/- 0.419        (5.029%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.934  1.000 
+
+
+*******************************************************************************
+Thu Nov 14 15:19:23 2024
+
+
+FIT:    data read from "< paste lente.txt immagine.txt" using 1:2
+        format = x:z
+        x range restricted to [562.000 : 657.000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Nov 14 15:19:43 2024
+
+
+FIT:    data read from "< paste lente.txt immagine.txt" using 1:2
+        format = x:z
+        x range restricted to [562.000 : 657.000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Nov 14 15:19:45 2024
+
+
+FIT:    data read from "< paste lente.txt immagine.txt" using 1:2
+        format = x:z
+        x range restricted to [562.000 : 657.000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Nov 14 15:20:21 2024
+
+
+FIT:    data read from "< paste lente.txt immagine.txt" using 1:2
+        format = x:z
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.7350250000e+02   0.00e+00  5.37e+01    1.000000e+00   1.000000e+00
+   5 1.6370372925e+01  -3.33e-03  5.37e-04    9.740130e-01   8.330720e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 16.3704
+rel. change during last iteration : -3.3291e-08
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.793492
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.62963
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.974013         +/- 0.005515     (0.5663%)
+b               = 8.33072          +/- 0.419        (5.029%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.934  1.000 
+
+
+*******************************************************************************
+Thu Nov 14 15:45:32 2024
+
+
+FIT:    data read from "< paste immagine.txt lente.txt" using 1:2
+        format = x:z
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.6001025000e+03   0.00e+00  5.79e+01    1.000000e+00   1.000000e+00
+   5 1.7241186181e+01  -1.76e-02  5.79e-04    1.025825e+00  -8.486779e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 17.2412
+rel. change during last iteration : -1.75972e-07
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.814323
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.663123
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.02583          +/- 0.005809     (0.5663%)
+b               = -8.48678         +/- 0.4753       (5.6%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.946  1.000 
+
+
+*******************************************************************************
+Thu Nov 14 15:47:04 2024
+
+
+FIT:    data read from "< paste immagine.txt lente.txt" using 1:2
+        format = x:z
+        x range restricted to [170.000 : 270.000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Nov 14 15:47:29 2024
+
+
+FIT:    data read from "< paste immagine.txt lente.txt" using 1:2
+        format = x:z
+        x range restricted to [170.000 : 270.000]
+BREAK: No data to fit
+
+*******************************************************************************
+Thu Nov 14 15:47:44 2024
+
+
+FIT:    data read from "< paste immagine.txt lente.txt" using 1:2
+        format = x:z
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.6001025000e+03   0.00e+00  5.79e+01    1.000000e+00   1.000000e+00
+   5 1.7241186181e+01  -1.76e-02  5.79e-04    1.025825e+00  -8.486779e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 17.2412
+rel. change during last iteration : -1.75972e-07
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.814323
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.663123
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.02583          +/- 0.005809     (0.5663%)
+b               = -8.48678         +/- 0.4753       (5.6%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.946  1.000 
+
+
+*******************************************************************************
+Thu Nov 14 16:28:48 2024
+
+
+FIT:    data read from "< paste X.txt Y.txt" using 1:2
+        format = x:z
+        x range restricted to [0.00000 : 0.110000]
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.1083053668e+01   0.00e+00  7.08e-01    1.000000e+00   1.000000e+00
+   5 5.3754697094e-05  -2.18e-07  7.08e-06   -9.372710e-01   1.884110e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 5.37547e-05
+rel. change during last iteration : -2.17653e-12
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00143788
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.06749e-06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.937271        +/- 0.01323      (1.411%)
+b               = 0.188411         +/- 0.0004648    (0.2467%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.811  1.000 
+
+
+*******************************************************************************
+Thu Nov 14 16:40:37 2024
+
+
+FIT:    data read from "< paste X.txt Y.txt" using 1:2
+        format = x:z
+        #datapoints = 28
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a * x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.1083053668e+01   0.00e+00  7.08e-01    1.000000e+00   1.000000e+00
+   5 5.3754697094e-05  -2.18e-07  7.08e-06   -9.372710e-01   1.884110e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 5.37547e-05
+rel. change during last iteration : -2.17653e-12
+
+degrees of freedom    (FIT_NDF)                        : 26
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00143788
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.06749e-06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.937271        +/- 0.01323      (1.411%)
+b               = 0.188411         +/- 0.0004648    (0.2467%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.811  1.000 
