@@ -3,7 +3,11 @@
 #include <fstream>
 #include <cmath>
 
+#include <cmath>
+#include <vector>
+
 using namespace std;
+
 
 int main(){
     ifstream ifile1("lente.txt");
@@ -79,9 +83,12 @@ int main(){
     double covxy2 = (sumxy - sumx*sumy)/divxy;
 
     cout << "covxy= " << covxy << endl;
-    cout << "covxy2= " << covxy2 << endl;
+    cout << "varx= " << varx << endl;
+    cout << "vary= " << vary << endl;
     cout << "corr= " << covxy/(sqrt(varx)*sqrt(vary)) << endl;
     // covxy = -covxy;
+    
+
     double sum=0;
 
     if(Y.size() != X.size()){
@@ -103,6 +110,56 @@ int main(){
     double s_A_0= sqrt(sqrt(pow(1/div, 2))); //incertezza sulla media pesata
     double s_f = s_A_0/(A_0 * A_0);
     cout << "f +s_f = " << f << " +- " << s_f << endl;
+
+    //chi quadro
+    double chiquadro = 0;
+    for (int i = 0; i < X.size(); ++i) {
+        chiquadro += pow((X.at(i) + Y.at(i) - A_0), 2)/(pow(s_Y.at(i), 2) + pow(s_X.at(i), 2));
+    }
+    cout << "chi quadro normalizzato = " << chiquadro / (X.size()-1) << endl;
+    double chiquadro2 = 0; //chi quadro con covarianza, calcolato usando la matrice di covarianza
+    for (size_t i = 0; i < X.size(); ++i) {
+        double residual = X.at(i) + Y.at(i) - A_0; //residui
+
+        // Calcolo del denominatore combinato con covarianza
+        double var_combined = pow(s_X.at(i), 2) + pow(s_Y.at(i), 2) - (covxy*covxy);
+
+        // Aggiornamento del chi quadro
+        chiquadro2 += pow(residual, 2) / var_combined;
+    }
+    cout << "chi quadro (con covarianza) = " << chiquadro2 / (X.size()-1) << endl;
+
+
+    // secondo metodo, F test
+    int N_2 = X.size();
+    double RSS1 = 0.0; // Residual Sum of Squares for the simplified model
+    double RSS2 = 0.0; // Residual Sum of Squares for the complete model
+
+    // Calculate RSS1 (m = -1)
+    for (size_t i = 0; i < N_2; ++i) {
+        double residual = Y.at(i) - (-X.at(i) + A_0);
+        double weight = s_Y.at(i) * s_Y.at(i) + s_X.at(i) * s_X.at(i);
+        RSS1 += pow(residual, 2) / weight;
+    }
+    // (m free)
+    double m_complete = -0.9452375299622334;
+    double A_complete = 0.18841351167363654;
+    // Calculate RSS2 (m free)
+    for (size_t i = 0; i < N_2; ++i) {
+        double residual = Y.at(i) - (m_complete * X.at(i) + A_complete);
+        double weight = s_Y.at(i) * s_Y.at(i);
+        RSS2 += pow(residual, 2) / weight;
+    }
+    
+    // Degrees of freedom
+    int p1 = 1;  // Parameters for the simplified model
+    int p2 = 2;  // Parameters for the complete model
+    int dof = N_2 - p2;
+    cout<< "RSS1= " << RSS1 << endl;
+    cout<< "RSS2= " << RSS2 << endl;
+    // Calculate F-statistic
+    double F = ((RSS1 - RSS2) / (p2 - p1)) / (RSS2 / dof);
+    cout << "F = " << F << endl;
 
     double sump= 0.0; 
     double sumq = 0.0; 
