@@ -6,7 +6,6 @@
 using namespace std;
 
 int main(){
-       
     ifstream ifile1("lente.txt");
     ifstream ifile2("schermo.txt");
     ofstream ofile1("X.txt");
@@ -30,8 +29,8 @@ int main(){
     double valore1, valore2;
 
     while(ifile1 >> valore1){
-        p.push_back(valore1-20.0 + 0.026/2 -1.01/6);
-        ofile5 << valore1-20.0 + 0.026/2 -1.01/6 << ", ";
+        p.push_back(valore1-20.0 + 0.26/2 -1.01/6);
+        ofile5 << valore1-20.0 + 0.26/2 -1.01/6 << ", ";
         p_l.push_back(valore1);
     }
 
@@ -46,8 +45,8 @@ int main(){
     }
 
     for(int i=0; i<p_s.size(); ++i){
-        q.push_back(p_s.at(i) - p_l.at(i)-0.026/2 -1.01/6);
-        ofile6 << p_s.at(i) - p_l.at(i)-0.026/2 -1.01/6 << ", ";
+        q.push_back(p_s.at(i) - p_l.at(i)-0.26/2 -1.01/6);
+        ofile6 << p_s.at(i) - p_l.at(i)-0.26/2 -1.01/6 << ", ";
         Y.push_back(1/q.at(i));
         X.push_back(1/p.at(i));
         s_X.push_back(s_p*pow(X.at(i), 2));  
@@ -59,10 +58,13 @@ int main(){
     }
 
     double covxy=0, sumx=0, sumy=0, sumxy=0;
+    double varx=0, vary=0;
     for(int i=0; i<X.size(); ++i){
         sumx += X.at(i);
         sumy += Y.at(i);
         sumxy += Y.at(i)*X.at(i);
+        varx += pow(X.at(i), 2);
+        vary += pow(Y.at(i), 2);
     }
     double x_m = sumx/X.size();
     double y_m = sumy/X.size();
@@ -72,10 +74,13 @@ int main(){
     }
 
     covxy=(sumxy - (sumx*sumy/X.size()))/(X.size()-1);
+    varx = (varx - pow(sumx, 2)/X.size())/(X.size()-1);
+    vary = (vary - pow(sumy, 2)/X.size())/(X.size()-1);
     double covxy2 = (sumxy - sumx*sumy)/divxy;
 
     cout << "covxy= " << covxy << endl;
     cout << "covxy2= " << covxy2 << endl;
+    cout << "corr= " << covxy/(sqrt(varx)*sqrt(vary)) << endl;
     // covxy = -covxy;
     double sum=0;
 
@@ -124,7 +129,7 @@ int main(){
     // valori ottenuti con la media pesata, usiamo questi valori per calcolare c e V, dato che rappresentano la miglior stima di f, no?
 
     double l_medio= 0.63195; //incertezza gaussiana
-    double s_lmedio = 0.01061306977;
+    double s_lmedio = 0.020;
     double c=l_medio*f/(1.4*1.4); //coefficiente aberrazione sferica
     double s_c=c*sqrt(pow((s_lmedio/l_medio), 2) + pow((s_f/f), 2) + 4*pow((0.05/1.4), 2));
 
