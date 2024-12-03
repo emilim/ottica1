@@ -80,7 +80,7 @@ int main(){
     covxy=(sumxy - (sumx*sumy/X.size()))/(X.size()-1);
     varx = (varx - pow(sumx, 2)/X.size())/(X.size()-1);
     vary = (vary - pow(sumy, 2)/X.size())/(X.size()-1);
-    double covxy2 = (sumxy - sumx*sumy)/divxy;
+
 
     cout << "covxy= " << covxy << endl;
     cout << "varx= " << varx << endl;

@@ -29,9 +29,6 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-plt.figure()
-plt.scatter(p , q, color= "blue", alpha=0.7)
-plt.show()
 
 def linear_model(x, A, B):
     return A + B * x
