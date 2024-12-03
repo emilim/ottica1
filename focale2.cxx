@@ -104,10 +104,11 @@ int main(){
         div += 1/(pow(s_Y.at(i), 2) + pow(s_X.at(i), 2) + 2*covxy);
     }
     double A_0 = sum/div;
-    cout << "A_0= " << A_0 << endl;
     
+
     f = 1/A_0;
     double s_A_0= sqrt(sqrt(pow(1/div, 2))); //incertezza sulla media pesata
+    cout << "A_0 +- s_A= " << A_0 << "+- " << s_A_0 << endl;
     double s_f = s_A_0/(A_0 * A_0);
     cout << "f +s_f = " << f << " +- " << s_f << endl;
 
@@ -160,6 +161,15 @@ int main(){
     // Calculate F-statistic
     double F = ((RSS1 - RSS2) / (p2 - p1)) / (RSS2 / dof);
     cout << "F = " << F << endl;
+
+//residui fit
+    vector<double> residui;
+    for(int i=0; i<X.size(); ++i){
+        residui.push_back((-X.at(i)+A_0)-Y.at(i));
+        if(abs(residui.at(i)) > s_A_0){
+            cout << "da scartare : " << X.at(i) << endl;
+        }
+    }
 
     double sump= 0.0; 
     double sumq = 0.0; 
@@ -214,7 +224,7 @@ int main(){
     double L = 52-20-1.01/3; 
     double s_L = sqrt(2*0.05*0.05 + 0.01/9);//L=P_s-P_0-VV'/3 , s_L = sqrt(2)*s_p = s_q
     double s_medio = 18.59;
-    double s_s_medio = 0.0314; 
+    double s_s_medio = 0.03144660377; 
     double s_f_b = sqrt(pow((s_medio/(2*L)), 2)*pow(s_s_medio, 2) + pow((1/4+pow((s_medio/(2*L)), 2)), 2)*s_L*s_L);
     double f_bessel = (L*L - s_medio*s_medio)/(4*L);
     cout << "f_bessel = " << f_bessel << " +- " << s_f_b << endl;
